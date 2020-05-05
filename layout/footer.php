@@ -3,13 +3,13 @@
 <script src="assets/js/popper.min.js" ></script>
 <script src="assets/js/bootstrap.min.js" ></script>
 <script src="assets/js/jquery.maskMoney.min.js" ></script>
-<script src="/assets/js/jquery.maskedinput.min.js" ></script>
+<script src="assets/js/jquery.maskedinput.min.js" ></script>
 
-<script src="/assets/js/highchart/highcharts.js"></script>
-<script src="/assets/js/highchart/highcharts-3d.js"></script>
-<script src="/assets/js/highchart/exporting.js"></script>
-<script src="/assets/js/highchart/export-data.js"></script>
-<script src="/assets/js/highchart/accessibility.js"></script>
+<script src="assets/js/highchart/highcharts.js"></script>
+<script src="assets/js/highchart/highcharts-3d.js"></script>
+<script src="assets/js/highchart/exporting.js"></script>
+<script src="assets/js/highchart/export-data.js"></script>
+<script src="assets/js/highchart/accessibility.js"></script>
 
 
 <script>

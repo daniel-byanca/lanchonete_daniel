@@ -1,4 +1,6 @@
 <?php include './layout/header.php'; ?>
+<link rel="stylesheet" href="./assets/js/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="./assets/js/assets/owl.theme.default.min.css">
 <?php include './layout/menu.php'; ?>
 <?php
 	$permissoes = retornaControle('produto');
@@ -79,7 +81,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-7">
+				<div class="col">
 					<div class="form-group">
 						<label for="descricao">Descrição do produto:</label>
 						<textarea name="descricao" id="descricao" class="form-control" rows="5"><?= ($produto->getDescricao() != '' ? $produto->getDescricao() : '') ?></textarea>
@@ -110,11 +112,6 @@
 				</div>
 				<div class="card-body">
 					<form action="controle_produto.php?acao=cadastraImagens" method="post" enctype="multipart/form-data">
-						<div class="row">
-		<div class="col-3>
-			<img src="/assets/img/produtos/<?= ($produto->getImagem() != '' && file_exists('assets/img/produtos/'.$produto->getImagem()) ? $produto->getImagem() : 'produto.png') ?>" alt="" width="150" class="rounded-circle img-thumbnail" id="fotopre7view">
-			<br>
-			<br>
 						<input type="hidden" name="produto_id" value="<?= $produto->getId();  ?>">
 						<div class="custom-file">
 						  <input type="file" class="custom-file-input" name="imagens[]" id="imagens" multiple>
@@ -131,9 +128,9 @@
 				<div class="card-header">
 					Imagens cadastradas
 				</div>
-				<div class="card-body">
+				<div class="card-body efeito"  style="position:relative;">
 					<?php foreach($imagens as $imagem): ?>
-						<img src="<?= $imagem->getCaminho(); ?>" class="img-thumbnail" width="100px">
+						<img src="<?= $imagem->getCaminho(); ?>" class="img-thumbnail" width="150px" style="border-radius: 60px;width: 150px;height: 150px;">
 					<?php endforeach; ?>
 				</div>
 			</div>
@@ -142,3 +139,40 @@
 </div>
 
 <?php include './layout/footer.php'; ?>
+<script src="./assets/js/owl.carousel.js"></script>
+<script src="./assets/js/bootstrap.min.js"></script>
+<script src="./assets/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+	function beeLeft() {
+    $(".efeito").animate({left: "-=500"}, 2000, "swing", beeRight);
+}
+function beeRight() {
+    $(".efeito").animate({left: "+=500"}, 2000, "swing", beeLeft);
+}
+
+beeRight();
+/*$(function() {
+$("#efeito").click(function(){
+  $("#elemento").animate({ 
+    // distancia da margem a esquerda
+    marginLeft: "200px",
+    // distância do topo
+    marginTop: "200px"
+    // tempo de execucao - milissegundos
+    }, 1000, function() {
+     $(this).html("chegamos!");
+    });
+  });
+});
+/*$("#efeito").click(function(){            
+    //Sem parâmetros: o efeito é executado em 400ms
+    $("#efeito").fadeToggle("slow");
+    //Informada a função callback
+    $("#efeito").fadeToggle("slow",
+        function(){
+            alert("Fade concluido");
+        }
+    );
+});*/
+
+</script>
